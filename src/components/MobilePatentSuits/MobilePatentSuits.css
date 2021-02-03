@@ -1,0 +1,58 @@
+path.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 2px;
+}
+
+marker#target {
+  fill: green;
+}
+
+path.link.project {
+  stroke: #4d1c86;
+}
+
+path.link.donor {
+  stroke: #ee6e2f;
+}
+
+path.link.target {
+  stroke: #008db1;
+}
+
+path.link.solution {
+  stroke: #7db100;
+}
+
+path.link.project#target {
+  fill: #4d1c86;
+}
+
+path.link.donor#target {
+  fill: #ee6e2f;
+}
+
+path.link.target#target {
+  fill: #008db1;
+}
+
+path.link.solution#target {
+  fill: #7db100;
+}
+
+circle {
+  fill: #ccc;
+  stroke: #333;
+  stroke-width: 2px;
+}
+
+text {
+  font: 16px sans-serif;
+  pointer-events: none;
+}
+
+text.shadow {
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-opacity: 0.8;
+}

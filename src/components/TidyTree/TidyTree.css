@@ -1,0 +1,20 @@
+.tidy-tree-container {
+  width: 100%;
+  height: 300vh;
+}
+
+.tidy-tree-container svg {
+  overflow: inherit;
+}
+
+.tidy-tree-container .node__root > circle {
+  fill: #4d1c86;
+}
+
+.tidy-tree-container .node__branch > circle {
+  fill: #ee6e2f;
+}
+
+.tidy-tree-container .node__leaf > circle {
+  fill: #7db100;
+}

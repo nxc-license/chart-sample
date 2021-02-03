@@ -1,2 +1,1 @@
-# chart-sample
-# chart-sample
+# 세상파일 인포그래픽 제안용 샘플 차트 프로젝트
