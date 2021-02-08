@@ -1,8 +1,8 @@
 import React from "react";
-import TidyTree from "../components/TidyTree";
+import NivoSankeyDiagram from "../components/NivoSankeyDiagram";
 import { useHistory } from "react-router-dom";
 
-const TidyTreePage = () => {
+const NivoSankeyDiagramPage = () => {
   const history = useHistory();
   const moveHome = () => {
     history.goBack();
@@ -13,9 +13,9 @@ const TidyTreePage = () => {
       <button style={styles.backButton} onClick={moveHome}>
         뒤로가기
       </button>
-      <h1>3D - Tidy Tree</h1>
+      <h1>Nivo - SankeyDiagram</h1>
       <section>
-        <TidyTree />
+        <NivoSankeyDiagram />
       </section>
     </div>
   );
@@ -24,8 +24,6 @@ const TidyTreePage = () => {
 const styles = {
   container: {
     padding: "60px",
-    width: "100%",
-    height: "auto",
   },
   backButton: {
     border: "none",
@@ -35,4 +33,4 @@ const styles = {
   },
 };
 
-export default TidyTreePage;
+export default NivoSankeyDiagramPage;
