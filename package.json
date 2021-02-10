@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.15",
     "@nivo/core": "^0.67.0",
     "@nivo/sankey": "^0.67.0",
     "@testing-library/jest-dom": "^5.11.4",

@@ -9,18 +9,23 @@ const HomePages = () => {
           <li style={styles.li}>
             <Link to="/sankey-diagram">Google Chart - Sankey Diagram</Link>
           </li>
-          <li style={{ ...styles.li, marginLeft: "20px" }}>
+          <li style={{ ...styles.li }}>
             <Link to="/tidy-tree">3D - Tidy Tree</Link>
           </li>
-          <li style={{ ...styles.li, marginLeft: "20px" }}>
-            <Link to="/nivo-sankey-diagram">Nivo - Network</Link>
+          <li style={{ ...styles.li }}>
+            <Link to="/nivo-sankey-diagram">✨ Nivo - Sankey Diagram</Link>
           </li>
-          <li style={{ ...styles.li, marginLeft: "20px" }}>
+          <li style={{ ...styles.li }}>
+            <Link to="/amcharts-sankey-diagram">
+              ✨ Amcharts - Sankey Diagram
+            </Link>
+          </li>
+          {/* <li style={{ ...styles.li }}>
             <Link to="/cytoscape">Cytoscape</Link>
-          </li>
-          <li style={{ ...styles.li, marginLeft: "20px" }}>
+          </li> */}
+          {/* <li style={{ ...styles.li }}>
             <Link to="/cambridge-intelligence">Cambridge Iintelligence</Link>
-          </li>
+          </li> */}
           {/* <li style={styles.li}>
           <Link to="/mobile-patent-suits">Mobile Patent Suits</Link>
         </li> */}
@@ -57,20 +62,11 @@ const HomePages = () => {
         </li>
         <li>
           <a
-            href="https://www.amcharts.com/demos/sankey-diagram/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            amCharts 4(무료/유료(https://www.amcharts.com/online-store/))
-          </a>
-        </li>
-        <li>
-          <a
             href="https://www.fusioncharts.com/charts/sankey-diagram"
             target="_blank"
             rel="noreferrer"
           >
-            fusioncharts(유료(https://www.fusioncharts.com/buy))
+            ✨ fusioncharts(유료(https://www.fusioncharts.com/buy))
           </a>
         </li>
       </ul>
@@ -94,7 +90,6 @@ const styles = {
   ul: {
     padding: 0,
     listStyle: "none",
-    display: "flex",
   },
   li: {
     fontSize: "24px",
