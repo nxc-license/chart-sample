@@ -19,7 +19,7 @@ const CytoscapeDiagram = () => {
     <div>
       <CytoscapeComponent
         elements={elements}
-        style={{ width: "600px", height: "600px" }}
+        style={{ width: "800px", height: "800px" }}
         // stylesheet={[
         //   {
         //     selector: "node",
