@@ -13,12 +13,10 @@ const HomePages = () => {
             <Link to="/tidy-tree">3D - Tidy Tree</Link>
           </li>
           <li style={{ ...styles.li }}>
-            <Link to="/nivo-sankey-diagram">✨ Nivo - Sankey Diagram</Link>
+            <Link to="/nivo-sankey-diagram">Nivo - Sankey Diagram</Link>
           </li>
           <li style={{ ...styles.li }}>
-            <Link to="/amcharts-sankey-diagram">
-              ✨ Amcharts - Sankey Diagram
-            </Link>
+            <Link to="/amcharts-sankey-diagram">Amcharts - Sankey Diagram</Link>
           </li>
           {/* <li style={{ ...styles.li }}>
             <Link to="/cytoscape">Cytoscape</Link>
@@ -66,7 +64,7 @@ const HomePages = () => {
             target="_blank"
             rel="noreferrer"
           >
-            ✨ fusioncharts(유료(https://www.fusioncharts.com/buy))
+            fusioncharts(유료(https://www.fusioncharts.com/buy))
           </a>
         </li>
       </ul>
