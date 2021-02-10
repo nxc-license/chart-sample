@@ -12,7 +12,13 @@ const HomePages = () => {
           <Link to="/tidy-tree">3D - Tidy Tree</Link>
         </li>
         <li style={{ ...styles.li, marginLeft: "20px" }}>
-          <Link to="/nivo-sankey-diagram">Vino - Network</Link>
+          <Link to="/nivo-sankey-diagram">Nivo - Network</Link>
+        </li>
+        {/* <li style={{ ...styles.li, marginLeft: "20px" }}>
+          <Link to="/cytoscape">Cytoscape</Link>
+        </li> */}
+        <li style={{ ...styles.li, marginLeft: "20px" }}>
+          <Link to="/cambridge-intelligence">Cambridge Iintelligence</Link>
         </li>
         {/* <li style={styles.li}>
           <Link to="/mobile-patent-suits">Mobile Patent Suits</Link>

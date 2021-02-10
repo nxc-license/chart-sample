@@ -5,6 +5,8 @@ import HomePages from "./pages/HomePages";
 import SankeyDiagramPage from "./pages/SankeyDiagramPage";
 import TidyTreePage from "./pages/TidyTreePage";
 import NivoSankeyDiagramPage from "./pages/NivoSankeyDiagramPage";
+import CambIntelPage from "./pages/CambIntelPage";
+import CytoscapePage from "./pages/CytoscapePage";
 import MobilePatentSuitsPage from "./pages/MobilePatentSuitsPage";
 
 const App = () => {
@@ -23,6 +25,12 @@ const App = () => {
           </Route>
           <Route path="/nivo-sankey-diagram">
             <NivoSankeyDiagramPage />
+          </Route>
+          <Route path="/cambridge-intelligence">
+            <CambIntelPage />
+          </Route>
+          <Route path="/cytoscape">
+            <CytoscapePage />
           </Route>
           {/* <Route path="/mobile-patent-suits">
             <MobilePatentSuitsPage />
