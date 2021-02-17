@@ -86,7 +86,7 @@ const TidyTree = () => {
     // Configure links
     chart.links.template.colorMode = "gradient";
     // chart.links.template.tooltipText ="{fromName} → {toName}: [bold]{value}[/] Mio units\n{fromName} contribute [bold]{value3} %[/] in {toName} sales: \n{toName} contributes [bold]{value2} %[/] in {fromName} sales";
-    chart.links.template.tooltipHTML = `<div style="background-color:pink">{fromName} → {toName}<div>`;
+    chart.links.template.tooltipHTML = `<div>{fromName} → {toName}<div>`;
     const hoverState = chart.links.template.states.create("hover");
     hoverState.properties.fillOpacity = 1;
 
