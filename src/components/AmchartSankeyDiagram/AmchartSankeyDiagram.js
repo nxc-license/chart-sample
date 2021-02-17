@@ -3,7 +3,14 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
-
+/**
+ * duration 옵션 관련 : https://www.amcharts.com/docs/v4/reference/dateaxis/
+ * tootip 관련 : https://www.amcharts.com/docs/v4/tutorials/tooltips-with-rich-html-content/
+ * animate 관련(sankey-diagram은 해당 안되는 것 같음) : https://www.amcharts.com/docs/v4/concepts/animations/#Advanced_usage
+ * 연습가능 codepen :
+ * - https://codepen.io/team/amcharts/pen/BYgeKe
+ * - https://codepen.io/team/amcharts/pen/RBVgEO
+ */
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_material);
 
