@@ -1,8 +1,12 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useState } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
+import sample1 from "./sample1";
+import sample2 from "./sample2";
+import sample3 from "./sample3";
+import sample4 from "./sample4";
 /**
  * duration 옵션 관련 : https://www.amcharts.com/docs/v4/reference/dateaxis/
  * tootip 관련 : https://www.amcharts.com/docs/v4/tutorials/tooltips-with-rich-html-content/
@@ -16,84 +20,34 @@ am4core.useTheme(am4themes_material);
 
 const TidyTree = () => {
   const chart = useRef(null);
+  const [option, setOption] = useState("sample2");
+  const [data, setData] = useState(sample2);
 
   useLayoutEffect(() => {
-    const data = [
-      { from: "SK하이닉스", to: "HIMS", value: 1300000 },
-      { from: "SK하이닉스", to: "오파테크", value: 400000 },
-      { from: "SK하이닉스", to: "어니스트비전", value: 501000 },
-      { from: "SK하이닉스", to: "한국점자도서관", value: 1060000 },
-      { from: "SK하이닉스", to: "네오엑세스", value: 825000 },
-      { from: "SK하이닉스", to: "도서출판점자", value: 510000 },
-      { from: "SK하이닉스", to: "오버플로우", value: 910000 },
-      { from: "HIMS", to: "김민*", value: 650000 },
-      { from: "HIMS", to: "박중*", value: 650000 },
-      { from: "네오엑세스", to: "김민*", value: 40000 },
-      { from: "네오엑세스", to: "박중*", value: 40000 },
-      { from: "네오엑세스", to: "정경*", value: 40000 },
-      { from: "네오엑세스", to: "유재*", value: 40000 },
-      { from: "네오엑세스", to: "신형*", value: 40000 },
-      { from: "네오엑세스", to: "문수*", value: 40000 },
-      { from: "네오엑세스", to: "김다*", value: 40000 },
-      { from: "네오엑세스", to: "공지*", value: 40000 },
-      { from: "네오엑세스", to: "홀길*", value: 40000 },
-      { from: "도서출판점자", to: "공지*", value: 41000 },
-      { from: "도서출판점자", to: "김다*", value: 41000 },
-      { from: "도서출판점자", to: "김명*", value: 41000 },
-      { from: "도서출판점자", to: "홀길*", value: 41000 },
-      { from: "도서출판점자", to: "정경*", value: 41000 },
-      { from: "도서출판점자", to: "유재*", value: 41000 },
-      { from: "도서출판점자", to: "김민*", value: 35000 },
-      { from: "도서출판점자", to: "정경*", value: 35000 },
-      { from: "도서출판점자", to: "유재*", value: 35000 },
-      { from: "도서출판점자", to: "김다*", value: 35000 },
-      { from: "도서출판점자", to: "공지*", value: 35000 },
-      { from: "도서출판점자", to: "신형*", value: 40000 },
-      { from: "도서출판점자", to: "박중*", value: 40000 },
-      { from: "어니스트비전", to: "문수*", value: 530000 },
-      { from: "어니스트비전", to: "홀길*", value: 530000 },
-      { from: "오버플로우", to: "정경*", value: 165000 },
-      { from: "오버플로우", to: "유재*", value: 165000 },
-      { from: "오버플로우", to: "신형*", value: 165000 },
-      { from: "오버플로우", to: "김다*", value: 165000 },
-      { from: "오버플로우", to: "공지*", value: 165000 },
-      { from: "오파테크", to: "김민*", value: 100000 },
-      { from: "오파테크", to: "박중*", value: 100000 },
-      { from: "오파테크", to: "정경*", value: 100000 },
-      { from: "오파테크", to: "문수*", value: 105000 },
-      { from: "오파테크", to: "홀길*", value: 105000 },
-      { from: "한국점자도서관", to: "김민*", value: 91000 },
-      { from: "한국점자도서관", to: "박중*", value: 91000 },
-      { from: "한국점자도서관", to: "정경*", value: 91000 },
-      { from: "한국점자도서관", to: "유재*", value: 91000 },
-      { from: "한국점자도서관", to: "신형*", value: 91000 },
-      { from: "한국점자도서관", to: "문수*", value: 91000 },
-      { from: "한국점자도서관", to: "김다*", value: 91000 },
-      { from: "한국점자도서관", to: "공지*", value: 91000 },
-      { from: "한국점자도서관", to: "김명*", value: 91000 },
-      { from: "한국점자도서관", to: "홀길*", value: 91000 },
-    ];
-
     /**
      * Sankey version of the chart
      */
 
     // Create chart instance
     const chart = am4core.create("chartdiv", am4charts.SankeyDiagram);
-    chart.data = data;
+    chart.data = data.data;
     chart.dataFields.fromName = "from";
     chart.dataFields.toName = "to";
     chart.dataFields.value = "value";
     chart.padding(0, 100, 10, 0);
 
     // Add title
-    chart.titles.template.fontSize = 20;
-    chart.titles.create().text = "Shipment of devices by vendor, 2017";
+    //chart.titles.template.fontSize = 20;
+    //chart.titles.create().text = "Shipment of devices by vendor, 2017";
 
     // Configure links
     chart.links.template.colorMode = "gradient";
     // chart.links.template.tooltipText ="{fromName} → {toName}: [bold]{value}[/] Mio units\n{fromName} contribute [bold]{value3} %[/] in {toName} sales: \n{toName} contributes [bold]{value2} %[/] in {fromName} sales";
     chart.links.template.tooltipHTML = `<div>{fromName} → {toName}<div>`;
+    // chart.links.template.fillOpacity = 0;
+    // chart.links.template.middleLine.strokeOpacity = 0.3;
+    // chart.links.template.middleLine.stroke = am4core.color("#555");
+    // chart.links.template.middleLine.strokeWidth = 5;
     const hoverState = chart.links.template.states.create("hover");
     hoverState.properties.fillOpacity = 1;
 
@@ -105,10 +59,10 @@ const TidyTree = () => {
     chart.nodes.template.readerTitle =
       "Click to show/hide or drag to rearrange";
     chart.nodes.template.showSystemTooltip = true;
-
     chart.nodes.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+    chart.nodes.template.tooltipHTML = `<div>{fromName} → {toName}<div>`;
 
-    console.log(chart);
+    console.log(chart.nodes.template.nameLabel.label);
     chart.interpolationDuration = 500; // 시작에 뿌려지는 애니메이션속도
     //chart.parsingStepDuration = 1000; // 각 데이터 분석 단계의 기간(ms)
     //chart.rangeChangeDuration = 50; // API의 상호 작용에 의해 선택한 범위가 변경 될 때 속도
@@ -119,11 +73,40 @@ const TidyTree = () => {
     return () => {
       chart.dispose();
     };
-  }, []);
+  }, [data]);
 
   return (
     <div>
-      <div id="chartdiv" style={{ width: "1280px", height: "500px" }}></div>
+      <div style={{ marginBottom: "20px" }}>
+        <button
+          style={option === "sample2" ? { background: "green" } : {}}
+          onClick={() => {
+            setOption("sample2");
+            setData(sample2);
+          }}
+        >
+          {sample2.title}
+        </button>
+        <button
+          style={option === "sample3" ? { background: "green" } : {}}
+          onClick={() => {
+            setOption("sample3");
+            setData(sample3);
+          }}
+        >
+          {sample3.title}
+        </button>
+        <button
+          style={option === "sample4" ? { background: "green" } : {}}
+          onClick={() => {
+            setOption("sample4");
+            setData(sample4);
+          }}
+        >
+          {sample4.title}
+        </button>
+      </div>
+      <div id="chartdiv" style={{ width: "1280px", height: "600px" }}></div>
       <ol>
         <li>
           <h3>링크</h3>
