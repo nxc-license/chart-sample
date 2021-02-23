@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@alloc/types/-/types-1.3.0.tgz#904245b8d3260a4b7d8a801c12501968f64fac08"
   integrity sha512-mH7LiFiq9g6rX2tvt1LtwsclfG5hnsmtIfkZiauAGrm1AwXhoRS0sF2WrN9JGN7eV5vFXqNaB0eXZ3IvMsVi9g==
 
+"@amcharts/amcharts4-fonts@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4-fonts/-/amcharts4-fonts-4.0.1.tgz#f68f0571497d8925b9cbf53199de6b27d7b6d526"
+  integrity sha512-IUpBxtgzrScWDMoA2Ma4NIV9Uhd6VxJu3vn+hF5ObdTXAiwzj6gnVawEhrh8zojWumVIb5IZ0EvuCWRjEIWhIg==
+
 "@amcharts/amcharts4@^4.10.15":
   version "4.10.15"
   resolved "https://registry.yarnpkg.com/@amcharts/amcharts4/-/amcharts4-4.10.15.tgz#1ec5134df7851c5a259320c23e2555642fbc5bd5"

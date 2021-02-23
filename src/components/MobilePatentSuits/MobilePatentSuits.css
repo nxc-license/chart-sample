@@ -46,10 +46,10 @@ circle {
   stroke-width: 2px;
 }
 
-text {
+/* text {
   font: 16px sans-serif;
   pointer-events: none;
-}
+} */
 
 text.shadow {
   stroke: #fff;

@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState } from "react";
+import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -7,6 +7,7 @@ import sample1 from "./sample1";
 import sample2 from "./sample2";
 import sample3 from "./sample3";
 import sample4 from "./sample4";
+import sample5 from "./sample5";
 /**
  * duration 옵션 관련 : https://www.amcharts.com/docs/v4/reference/dateaxis/
  * tootip 관련 : https://www.amcharts.com/docs/v4/tutorials/tooltips-with-rich-html-content/
@@ -16,14 +17,13 @@ import sample4 from "./sample4";
  * - https://codepen.io/team/amcharts/pen/RBVgEO
  */
 am4core.useTheme(am4themes_animated);
-am4core.useTheme(am4themes_material);
 
 const TidyTree = () => {
   const chart = useRef(null);
   const [option, setOption] = useState("sample2");
   const [data, setData] = useState(sample2);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     /**
      * Sankey version of the chart
      */
@@ -41,34 +41,43 @@ const TidyTree = () => {
     //chart.titles.create().text = "Shipment of devices by vendor, 2017";
 
     // Configure links
-    chart.links.template.colorMode = "gradient";
-    // chart.links.template.tooltipText ="{fromName} → {toName}: [bold]{value}[/] Mio units\n{fromName} contribute [bold]{value3} %[/] in {toName} sales: \n{toName} contributes [bold]{value2} %[/] in {fromName} sales";
-    chart.links.template.tooltipHTML = `<div>{fromName} → {toName}<div>`;
-    // chart.links.template.fillOpacity = 0;
-    // chart.links.template.middleLine.strokeOpacity = 0.3;
-    // chart.links.template.middleLine.stroke = am4core.color("#555");
-    // chart.links.template.middleLine.strokeWidth = 5;
-    const hoverState = chart.links.template.states.create("hover");
+    let linkTemplate = chart.links.template;
+    linkTemplate.colorMode = "gradient";
+    linkTemplate.colorMode = "gradient";
+    // linkTemplate.tooltipText ="{fromName} → {toName}: [bold]{value}[/] Mio units\n{fromName} contribute [bold]{value3} %[/] in {toName} sales: \n{toName} contributes [bold]{value2} %[/] in {fromName} sales";
+    //linkTemplate.tooltipHTML = `<div>{fromName} → {toName}<div>`;
+    linkTemplate.tooltipText = `{fromName}→{toName}`;
+    // linkTemplate.fillOpacity = 0;
+    // linkTemplate.middleLine.strokeOpacity = 0.3;
+    // linkTemplate.middleLine.stroke = am4core.color("#555");
+    // linkTemplate.middleLine.strokeWidth = 5;
+    const hoverState = linkTemplate.states.create("hover");
     hoverState.properties.fillOpacity = 1;
 
     // Exporting
     chart.exporting.menu = new am4core.ExportMenu();
 
     // Configure nodes
-    chart.nodes.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-    chart.nodes.template.readerTitle =
-      "Click to show/hide or drag to rearrange";
-    chart.nodes.template.showSystemTooltip = true;
-    chart.nodes.template.cursorOverStyle = am4core.MouseCursorStyle.pointer;
-    chart.nodes.template.tooltipHTML = `<div>{fromName} → {toName}<div>`;
+    // make nodes draggable
+    let nodeTemplate = chart.nodes.template;
+    nodeTemplate.inert = true;
+    nodeTemplate.readerTitle = "Drag me!";
+    nodeTemplate.showSystemTooltip = true;
+    nodeTemplate.width = 20;
+    nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
+    nodeTemplate.nameLabel.label.strokeWidth = 0;
+    nodeTemplate.fontSize = "20px";
+    nodeTemplate.fontFamily = "Nanum Brush Script";
 
-    console.log(chart.nodes.template.nameLabel.label);
+    console.log(chart.links.template);
     chart.interpolationDuration = 500; // 시작에 뿌려지는 애니메이션속도
     //chart.parsingStepDuration = 1000; // 각 데이터 분석 단계의 기간(ms)
     //chart.rangeChangeDuration = 50; // API의 상호 작용에 의해 선택한 범위가 변경 될 때 속도
     //chart.tapTimeout = 50; // "활성"모드를 유지하는 시간
     //chart._heightAnimation.duration = 500;
     //chart._heightAnimation.easing = "bounceInOut";
+
+    //chart.fontFamily = "";
 
     return () => {
       chart.dispose();
