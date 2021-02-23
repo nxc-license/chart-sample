@@ -45,8 +45,10 @@ const TidyTree = () => {
     linkTemplate.colorMode = "gradient";
     linkTemplate.colorMode = "gradient";
     // linkTemplate.tooltipText ="{fromName} → {toName}: [bold]{value}[/] Mio units\n{fromName} contribute [bold]{value3} %[/] in {toName} sales: \n{toName} contributes [bold]{value2} %[/] in {fromName} sales";
-    //linkTemplate.tooltipHTML = `<div>{fromName} → {toName}<div>`;
-    linkTemplate.tooltipText = `{fromName}→{toName}`;
+    linkTemplate.tooltipHTML = `<div style="font-family: 'Nanum Brush Script'">{fromName} → {toName}<div>`;
+    //linkTemplate.tooltipText = `{fromName}→{toName}`;
+    linkTemplate.fontSize = "14px";
+    linkTemplate.fontFamily = "Nanum Brush Script";
     // linkTemplate.fillOpacity = 0;
     // linkTemplate.middleLine.strokeOpacity = 0.3;
     // linkTemplate.middleLine.stroke = am4core.color("#555");
@@ -66,10 +68,10 @@ const TidyTree = () => {
     nodeTemplate.width = 20;
     nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
     nodeTemplate.nameLabel.label.strokeWidth = 0;
-    nodeTemplate.fontSize = "20px";
+    nodeTemplate.fontSize = "16px";
     nodeTemplate.fontFamily = "Nanum Brush Script";
 
-    console.log(chart.links.template);
+    console.log(chart.nodes.template);
     chart.interpolationDuration = 500; // 시작에 뿌려지는 애니메이션속도
     //chart.parsingStepDuration = 1000; // 각 데이터 분석 단계의 기간(ms)
     //chart.rangeChangeDuration = 50; // API의 상호 작용에 의해 선택한 범위가 변경 될 때 속도
@@ -115,7 +117,10 @@ const TidyTree = () => {
           {sample4.title}
         </button>
       </div>
-      <div id="chartdiv" style={{ width: "1280px", height: "600px" }}></div>
+      <div
+        id="chartdiv"
+        style={{ width: "1280px", height: "900px", border: "1px solid black" }}
+      ></div>
       <ol>
         <li>
           <h3>링크</h3>
