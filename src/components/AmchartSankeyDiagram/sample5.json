@@ -1,13 +1,19 @@
-[
-  { "from": "A", "to": "D", "value": 10 },
-  { "from": "B", "to": "D", "value": 8 },
-  { "from": "B", "to": "E", "value": 4 },
-  { "from": "C", "to": "E", "value": 3 },
-  { "from": "D", "to": "G", "value": 5 },
-  { "from": "D", "to": "I", "value": 2 },
-  { "from": "D", "to": "H", "value": 3 },
-  { "from": "E", "to": "H", "value": 6 },
-  { "from": "G", "to": "J", "value": 5 },
-  { "from": "I", "to": "J", "value": 1 },
-  { "from": "H", "to": "J", "value": 9 }
-]
+{
+    "title" :"솔루션:1 / 지역:2",
+    "data": [
+      {
+          "from":"SK하이닉스",
+          "to":"어니스트비전",
+          "value":1000
+      },
+    {
+          "from":"어니스트비전",
+          "to":"강남구",
+          "value":500
+      },
+      {
+          "from":"어니스트비전",
+          "to":"도봉구",
+          "value":500
+      }]
+}

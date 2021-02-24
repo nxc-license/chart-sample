@@ -43,12 +43,10 @@ const TidyTree = () => {
     // Configure links
     let linkTemplate = chart.links.template;
     linkTemplate.colorMode = "gradient";
-    linkTemplate.colorMode = "gradient";
     // linkTemplate.tooltipText ="{fromName} → {toName}: [bold]{value}[/] Mio units\n{fromName} contribute [bold]{value3} %[/] in {toName} sales: \n{toName} contributes [bold]{value2} %[/] in {fromName} sales";
-    linkTemplate.tooltipHTML = `<div style="font-family: 'Nanum Brush Script'">{fromName} → {toName}<div>`;
+    linkTemplate.tooltipHTML = `<div style="font-family: 'Godo'">{fromName} → {toName}<div>`;
     //linkTemplate.tooltipText = `{fromName}→{toName}`;
-    linkTemplate.fontSize = "14px";
-    linkTemplate.fontFamily = "Nanum Brush Script";
+    //linkTemplate.fontSize = "14px";
     // linkTemplate.fillOpacity = 0;
     // linkTemplate.middleLine.strokeOpacity = 0.3;
     // linkTemplate.middleLine.stroke = am4core.color("#555");
@@ -68,8 +66,9 @@ const TidyTree = () => {
     nodeTemplate.width = 20;
     nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer;
     nodeTemplate.nameLabel.label.strokeWidth = 0;
-    nodeTemplate.fontSize = "16px";
-    nodeTemplate.fontFamily = "Nanum Brush Script";
+    //nodeTemplate.fontSize = "16px";
+    nodeTemplate.fontFamily = "Godo";
+    nodeTemplate.nameLabel.label.fill = am4core.color("#333");
 
     console.log(chart.nodes.template);
     chart.interpolationDuration = 500; // 시작에 뿌려지는 애니메이션속도
@@ -79,7 +78,9 @@ const TidyTree = () => {
     //chart._heightAnimation.duration = 500;
     //chart._heightAnimation.easing = "bounceInOut";
 
-    //chart.fontFamily = "";
+    chart.fontFamily = "Godo";
+    chart.horizontalCenter = "left";
+    chart.verticalCenter = "top";
 
     return () => {
       chart.dispose();
@@ -116,10 +117,19 @@ const TidyTree = () => {
         >
           {sample4.title}
         </button>
+        <button
+          style={option === "sample5" ? { background: "green" } : {}}
+          onClick={() => {
+            setOption("sample5");
+            setData(sample5);
+          }}
+        >
+          {sample5.title}
+        </button>
       </div>
       <div
         id="chartdiv"
-        style={{ width: "1280px", height: "900px", border: "1px solid black" }}
+        style={{ width: "1280px", height: "600px", border: "1px solid black" }}
       ></div>
       <ol>
         <li>

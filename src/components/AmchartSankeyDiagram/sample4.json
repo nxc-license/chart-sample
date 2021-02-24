@@ -1,5 +1,5 @@
 {
-    "title" :"솔루션:3 / 사람:60",
+    "title" :"솔루션:3 / 사람:50",
     "data": [
    {
       "from":"SK하이닉스",
@@ -12,7 +12,7 @@
    },{
       "from":"SK하이닉스",
       "to":"어니스트비전",
-      "value":20
+      "value":10
    },
     {"from":"HIMS","to":"Cheryl","value":1},
     {"from":"HIMS","to":"Alex","value":1},
@@ -63,15 +63,5 @@
     {"from":"어니스트비전","to":"Jana","value":1},
     {"from":"어니스트비전","to":"Gauthier","value":1},
     {"from":"어니스트비전","to":"Thorny","value":1},
-    {"from":"어니스트비전","to":"Evie","value":1},
-    {"from":"어니스트비전","to":"Weylin","value":1},
-    {"from":"어니스트비전","to":"Lu","value":1},
-    {"from":"어니스트비전","to":"Willy","value":1},
-    {"from":"어니스트비전","to":"Traci","value":1},
-    {"from":"어니스트비전","to":"Fonsie","value":1},
-    {"from":"어니스트비전","to":"Oona","value":1},
-    {"from":"어니스트비전","to":"Marlin","value":1},
-    {"from":"어니스트비전","to":"Robbyn","value":1},
-    {"from":"어니스트비전","to":"Haley","value":1},
-    {"from":"어니스트비전","to":"Caty","value":1}
+    {"from":"어니스트비전","to":"Evie","value":1}
     ]}
